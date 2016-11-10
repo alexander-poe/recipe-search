@@ -1,3 +1,4 @@
+//state
 var state = {
 	url: 'http://crossorigin.me/https://api.edamam.com/search',
 	query: '',
@@ -9,8 +10,12 @@ var state = {
 	}
 }
 
+function getHits() {
+	return state.results;
+};
+
 function storeResults(data) {
-	state.results = data;
+	state.results = data.hits;
 }
 
 $(function() {
@@ -20,21 +25,34 @@ $(function() {
 	};
 
 	function renderData() {
+		console.log(state.results);
 		var resultsHtml = ''; 
-		state.results.hits.forEach(function(result) {
+		state.results.forEach(function(result) {
 			var img = result.recipe.image;
 			var link = result.recipe.url;
 			var recipeHtml = '<a href="' + link + '"><img src="' + img + 
-			'"></a>';
+			'"></a>'+'</br>' + '<dl>' + renderIngredientsList(result) + '</dl>';
 			resultsHtml += recipeHtml;
 		})
 		$("#results").html(resultsHtml);
 	};
 
+	function renderIngredientsList(result) {
+		console.log(result);
+		var resultsHtml = '';
+		result.recipe.ingredientsLines.forEach(function(result) {
+			resultsHTML += '<dt>' + result.recipe.ingredientsLines + '</dt>';
+
+		})
+		return resultsHtml;
+	}
+
+
 $("form").submit(function(e) {
 	e.preventDefault();
 	state.query = $("#searchRecipes").val();
 	newSearch(state.query);
+	renderData();
 })
 
 
