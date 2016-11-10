@@ -20,8 +20,8 @@ $(function() {
 		data.hits.forEach(function(result) {
 			var img = result.recipe.image;
 			var link = result.recipe.url;
-			var recipeHtml = '<a href="' + link + '"><img src="' + img + 
-			'"></a>'+'</br>' + '<dl>' + renderIngredientsList(result) + '</dl>';
+			var recipeHtml = '<div class=result><img src="' + img + 
+			'"><a href="' + link + '"></a>' +'</br>' + '<dl class="list hidden">' + renderIngredientsList(result) + '</dl></div>';
 			resultsHtml += recipeHtml;
 		})
 		$("#results").html(resultsHtml);
@@ -45,6 +45,11 @@ $("form").submit(function(e) {
 	newSearch(state.query);
 })
 
+$("#results").on("click", ".result", function(e) {
+	e.stopPropagation();
+	$(this).children(".list").toggleClass("hidden");
+	$(this).children(".list").toggleClass("float");
+})
 
 });
 

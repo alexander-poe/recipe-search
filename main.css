@@ -1,5 +1,16 @@
 .result {
 	box-sizing: border-box;
-	width: 304px;
-	border: 2px solid grey;
+	width: 300px;
+}
+
+.hidden {
+	display: none;
+}
+
+.result {
+	display: inline-block;
+}
+
+.float {
+	float: left;
 }
