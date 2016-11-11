@@ -1,8 +1,9 @@
 $(function() {
 
 //state
+var URL = 'http://crossorigin.me/https://api.edamam.com/search';
+
 var state = {
-	url: 'http://crossorigin.me/https://api.edamam.com/search',
 	query: '',
 	searchObj: {
 		q:'',
@@ -13,43 +14,43 @@ var state = {
 
 
 //new search	
-	function newSearch(query) {
-		state.searchObj.q = state.query; 
-		$.getJSON(state.url, state.searchObj, renderData);
-	};
+function newSearch(query) {
+	state.searchObj.q = state.query; 
+	$.getJSON(URL, state.searchObj, renderData);
+};
 
-	
+function generateIngredientsList(result) {
+	var resultsHtml = '';
+	result.recipe.ingredientLines.forEach(function(result) {
+		resultsHtml += '<dt>' + result + '</dt>';
+	})
+	return resultsHtml;
+}
+
+function generateButtons(result) {
+	var link = result.recipe.url;
+	var resultsHtml = '';
+	resultsHtml += '<div class="btn-group">' + 
+	'<button type="button" id="recipebtn" value="' + link + '" class="btn btn-primary">' + "Recipe" + '</button>' +
+	'<button type="button" id="nutritionbtn" class="btn btn-primary">' + "Nutrition" + '</button>' +
+	'</div>';
+	return resultsHtml;
+};
+
 //html render
-	function renderData(data) {
-		var resultsHtml = ''; 
-		data.hits.forEach(function(result) {
-			var img = result.recipe.image;
-			var recipeHtml = '<div class=result><img src="' + img + 
-			'">' + '</br>' + '<div class="list hidden"><dl>' + renderIngredientsList(result) + '</dl>' + renderButtons(result) + '</div></div>';
-			resultsHtml += recipeHtml;
-		})
-		$("#results").html(resultsHtml);
-	};
+function renderData(data) {
+	var resultsHtml = ''; 
+	data.hits.forEach(function(result) {
+		var img = result.recipe.image;
+		var recipeHtml = '<div class=result><img src="' + img + 
+		'">' + '</br>' + '<div class="list hidden"><dl>' + 
+		generateIngredientsList(result) + '</dl>' + 
+		generateButtons(result) + '</div></div>';
+		resultsHtml += recipeHtml;
+	})
+	$("#results").html(resultsHtml);
+};
 
-	function renderIngredientsList(result) {
-		var resultsHtml = '';
-		result.recipe.ingredientLines.forEach(function(result) {
-			resultsHtml += '<dt>' + result + '</dt>';
-
-		})
-		return resultsHtml;
-	}
-
-	function renderButtons(result) {
-		var link = result.recipe.url;
-		var resultsHtml = '';
-			resultsHtml += '<div class="btn-group">' + 
-							'<button type="button" id="recipebtn" value="' + link + '" class="btn btn-primary">' + "Recipe" + '</button>' +
-							'<button type="button" id="nutritionbtn" class="btn btn-primary">' + "Nutrition" + '</button>' +
-						  '</div>';
-		return resultsHtml;
-
-	};
 
 //event listeners 
 $("form").submit(function(e) {
@@ -61,8 +62,7 @@ $("form").submit(function(e) {
 
 $("#results").on("click", ".result", function(e) {
 	e.stopPropagation();
-	$(this).children(".list").toggleClass("hidden");
-	$(this).children(".list").toggleClass("float");
+	$(this).children(".list").toggleClass("hidden").toggleClass("float");
 })
 
 $("#results").on("click", "#recipebtn", function(event) {

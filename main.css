@@ -1,16 +1,48 @@
+#results {
+	line-height: 0;
+}
 .result {
 	box-sizing: border-box;
 	width: 300px;
+	display: inline-block;
 }
 
 .hidden {
 	display: none;
 }
 
-.result {
-	display: inline-block;
-}
-
 .float {
 	float: left;
+}
+
+dl {
+	line-height: 1.5em;
+}
+
+body {
+	background-color: #fff;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+button {
+	background-color: blue;
+	color: white;
+	font-size: 2em;
+	border-radius: 5px;
+	font-family: 'Cormorant Garamond', serif;
+	border: navy 2px solid;
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
+
+.btn-group {
+	font-size: 0.5em;
+}
+
+input {
+	font-size: 2em;
+	border-radius: 5px;
+	font-family: 'Cormorant Garamond', serif;
+	border: navy 2px solid;
+	height: 44px;
 }

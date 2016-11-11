@@ -12,3 +12,17 @@ user clicks on chosen image, goes to recipe site
 user enters new search
 program erases old search results from page
 repeat
+
+----
+add instructions on page
+change button to direct link
+add recipe title to drop-down info
+figure out what nutrition info to include
+create render Nutrition function
+when user clicks nutrition button, 
+	toggles hide for nutrition and ingredients
+	changes text to/from ingredients/nutrition
+create README
+nix bootstrap to show off CSS skills
+make page prettier??
+make code pretty
