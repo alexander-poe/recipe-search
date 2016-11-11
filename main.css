@@ -1,49 +1,64 @@
+
 #results {
-	line-height: 0;
+    line-height: 0;
 }
 
 .result {
-	box-sizing: border-box;
-	width: 300px;
-	display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    display: inline-block;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .float {
-	float: left;
+    float: left;
 }
 
 dl, h3 {
-	line-height: 1.5em;
+    line-height: 1.5em;
 }
 
 body {
-	background-color: #fff;
-	font-family: 'Cormorant Garamond', serif;
+    background-color: #fff;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 button {
-	background-color: blue;
-	color: white;
-	font-size: 2em;
-	border-radius: 5px;
-	font-family: 'Cormorant Garamond', serif;
-	border: navy 2px solid;
-	margin-left: 45px;
-	margin-bottom: 20px;
+    background-color: blue;
+    color: white;
+    font-size: 2em;
+    border-radius: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    border: navy 2px solid;
+    margin-left: 45px;
+    margin-bottom: 20px;
 }
 
 .btn-group {
-	font-size: 0.5em;
+    font-size: 0.5em;
 }
 
 input {
-	font-size: 2em;
-	border-radius: 5px;
-	font-family: 'Cormorant Garamond', serif;
-	border: navy 2px solid;
-	height: 44px;
+    font-size: 2em;
+    border-radius: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    border: navy 2px solid;
+    height: 44px;
+}
+
+#health-container {
+    width: 300px;
+    border: 1px solid navy;
+    border-radius: 5px;
+    float: right;
+}
+
+#health-container button {
+    margin-top: 20px;
+    font-size: 1em;
+    border: 1px solid navy;
+    border-radius: 5px;
 }
