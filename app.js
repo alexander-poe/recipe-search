@@ -1,7 +1,7 @@
 $(function() {
 
 //!state
-var URL = 'https://api.edamam.com/search?callback=';
+var URL = 'https://api.edamam.com/search?callback=?';
 
 var state = {
 	query: '',
