@@ -34,13 +34,11 @@ function changeHealthState(healthyDiet) {
 
 //nutrition facts
 function generateNutrition(result) {
-	console.log(result.recipe.totalNutrients.CHOLE.quantity);
 	var servings = result.recipe.yield;
 	var calories = result.recipe.calories / servings;
 	var totalFat = result.recipe.totalNutrients.FAT.quantity / servings;
 	var saturatedFat = result.recipe.totalNutrients.FASAT.quantity / servings;
 	var cholesterol = result.recipe.totalNutrients.CHOLE.quantity / servings;
-	console.log(cholesterol);
 	var sodium = result.recipe.totalNutrients.NA.quantity / servings;
 	var potassium = result.recipe.totalNutrients.K.quantity / servings;
 	var totalCarbs = result.recipe.totalNutrients.CHOCDF.quantity / servings;
@@ -57,20 +55,17 @@ function generateNutrition(result) {
 				'<tr><th>Amount per Serving</th></tr>' +
 				'<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
 				'<tr><td>% Daily Value*</td></tr>' + 
-				'<tr><td>Total Fat... ' + Math.round(totalFat) + '</td><td>...%</td></tr>' + 
-				'<tr><td>Saturated Fat...' + Math.round(saturatedFat) + '</td><td>...%</td></tr>' + 
-				'<tr><td>Cholesterol...' + Math.round(cholesterol) +'</td><td>...%</td></tr>' + 
-				'<tr><td>Sodium...' + Math.round(sodium) + ' </td><td>...%</td></tr>' + 
-				'<tr><td>Potassium...' + Math.round(potassium) + '</td><td>...%</td></tr>' +
-				'<tr><td>Total Carbohydrate...' + Math.round(totalCarbs) + '</td><td>...%</td></tr>' +
-				'<tr><td>Sugars... ' + Math.round(sugars) + '</td><td>...%</td></tr>' +
-				'<tr><td>Protein... ' + Math.round(protein) + ' </td><td>...</td></tr>' +
-				'<tr><td>*Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs.</td></tr>' +
+				'<tr><td>Total Fat... ' + Math.round(totalFat) + '</td></tr>' + 
+				'<tr><td>Saturated Fat...' + Math.round(saturatedFat) + '</td></tr>' + 
+				'<tr><td>Cholesterol...' + Math.round(cholesterol) +'</td></tr>' + 
+				'<tr><td>Sodium...' + Math.round(sodium) + ' </td></tr>' + 
+				'<tr><td>Potassium...' + Math.round(potassium) + '</td></tr>' +
+				'<tr><td>Total Carbohydrate...' + Math.round(totalCarbs) + '</td></tr>' +
+				'<tr><td>Sugars... ' + Math.round(sugars) + '</td></tr>' +
+				'<tr><td>Protein... ' + Math.round(protein) + ' </td></tr>' +
 			'</table>' +
 		'</div>';
-	console.log(resultsHtml);
 	return resultsHtml;
-	
 }
 
 //ingredients 
@@ -134,8 +129,8 @@ $("#results").on("click", "#recipebtn", function(e) {
 //nutritional data toggle
 $("#results").on("click", "#nutritionbtn", function(e) {
 	e.stopPropagation();
-	alert('works');
-
+	$(this).closest(".list").children(".nutrition-info").toggleClass("hidden");
+	$(this).closest(".list").children("dl").toggleClass("hidden");
 })
 
 //v, vg, gf ect
