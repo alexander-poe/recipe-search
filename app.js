@@ -43,7 +43,8 @@ function renderData(data) {
 	data.hits.forEach(function(result) {
 		var img = result.recipe.image;
 		var recipeHtml = '<div class=result><img src="' + img + 
-		'">' + '</br>' + '<div class="list hidden"><dl>' + 
+		'">' + '</br>' + '<div class="list hidden"><h3>' + 
+		result.recipe.label + '</h3>' + '<h4>' + 'serves ' + result.recipe.yield + '</h4><dl>' + 
 		generateIngredientsList(result) + '</dl>' + 
 		generateButtons(result) + '</div></div>';
 		resultsHtml += recipeHtml;

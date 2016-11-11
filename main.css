@@ -1,6 +1,7 @@
 #results {
 	line-height: 0;
 }
+
 .result {
 	box-sizing: border-box;
 	width: 300px;
@@ -15,7 +16,7 @@
 	float: left;
 }
 
-dl {
+dl, h3 {
 	line-height: 1.5em;
 }
 

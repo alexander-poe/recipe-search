@@ -14,15 +14,16 @@ program erases old search results from page
 repeat
 
 ----
-add instructions on page
-change button to direct link
-add recipe title to drop-down info
+*add recipe title to drop-down info
 figure out what nutrition info to include
 create render Nutrition function
 when user clicks nutrition button, 
 	toggles hide for nutrition and ingredients
 	changes text to/from ingredients/nutrition
+add vegan/etc search options
 create README
-nix bootstrap to show off CSS skills
+? help button with directions
+change button to direct link
+*nix bootstrap to show off CSS skills
 make page prettier??
 make code pretty
