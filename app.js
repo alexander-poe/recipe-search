@@ -1,14 +1,15 @@
 $(function() {
 
 //!state
-var URL = 'https://api.edamam.com/search?callback=?';
+var URL = 'https://api.edamam.com/search';
 
 var state = {
 	query: '',
 	searchObj: {
 		q:'',
 		app_id: '6da7e93e',
-		app_key: '8e6eaad81cc090bc90cb3479ffff21f6'
+		app_key: '8e6eaad81cc090bc90cb3479ffff21f6',
+		callback: '?'
 	}
 }
 
