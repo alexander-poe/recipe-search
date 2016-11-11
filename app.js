@@ -1,7 +1,7 @@
 $(function() {
 
 //!state
-var URL = 'http://crossorigin.me/https://api.edamam.com/search';
+var URL = 'https://api.edamam.com/search?callback=?';
 
 var state = {
 	query: '',
