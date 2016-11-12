@@ -51,8 +51,7 @@ function generateNutrition(result) {
 		if (nutrient === undefined) {
 			size = 0;
 		} else {
-			size = parseInt(nutrient.quantity) / servings;
-			console.log(size);
+			size = Math.round(parseInt(nutrient.quantity) / servings);
 		}
 		return size;
 	})
@@ -64,15 +63,15 @@ console.log(nutrientsArray);
 			'<table>' +
 				'<tr><th>Nutrition Facts</th></tr>' +
 				'<tr><th>Amount per Serving</th></tr>' +
-				'<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
-				'<tr><td>Total Fat... ' + Math.round(nutrientsArray[0]) + '</td></tr>' + 
-				'<tr><td>Saturated Fat...' + Math.round(nutrientsArray[1]) + '</td></tr>' + 
-				'<tr><td>Cholesterol...' + Math.round(nutrientsArray[2]) +'</td></tr>' + 
-				'<tr><td>Sodium...' + Math.round(nutrientsArray[3]) + ' </td></tr>' + 
-				'<tr><td>Potassium...' + Math.round(nutrientsArray[4]) + '</td></tr>' +
-				'<tr><td>Total Carbohydrate...' + Math.round(nutrientsArray[5]) + '</td></tr>' +
-				'<tr><td>Sugars... ' + Math.round(nutrientsArray[6]) + '</td></tr>' +
-				'<tr><td>Protein... ' + Math.round(nutrientsArray[7]) + ' </td></tr>' +
+				'<tr><td>Calories.....' + calories + '</td></tr>' +
+				'<tr><td>Total Fat... ' + nutrientsArray[0] + '</td></tr>' + 
+				'<tr><td>Saturated Fat...' + nutrientsArray[1] + '</td></tr>' + 
+				'<tr><td>Cholesterol...' + nutrientsArray[2] +'</td></tr>' + 
+				'<tr><td>Sodium...' + nutrientsArray[3] + ' </td></tr>' + 
+				'<tr><td>Potassium...' + nutrientsArray[4] + '</td></tr>' +
+				'<tr><td>Total Carbohydrate...' + nutrientsArray[5] + '</td></tr>' +
+				'<tr><td>Sugars... ' + nutrientsArray[6] + '</td></tr>' +
+				'<tr><td>Protein... ' + nutrientsArray[7] + ' </td></tr>' +
 			'</table>' +
 		'</div>';
 	return resultsHtml;
