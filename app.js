@@ -1,5 +1,5 @@
 $(function() {
-console.log("1");
+
 //!state
 var URL = 'https://api.edamam.com/search?callback=?';
 var state = {
@@ -26,17 +26,28 @@ function changeHealthState(healthyDiet) {
 }
 //!rendering
 //nutrition facts
+    
+function generateNutrient(nutrient) {
+    var num = ''
+    if (nutrient !== undefined) {
+        num = Math.round(result.recipe.totalNutrients.FAT.quantity / servings); 
+    } else {
+        num = "NA"
+    }
+    return num;
+}
+    
 function generateNutrition(result) {
     var servings = result.recipe.yield;
     var calories = result.recipe.calories / servings;
-    var totalFat = Math.round(result.recipe.totalNutrients.FAT.quantity / servings) || "NA";
-    var saturatedFat = Math.round(result.recipe.totalNutrients.FASAT.quantity / servings) || "NA";
-    var cholesterol = Math.round(result.recipe.totalNutrients.CHOLE.quantity / servings) || "NA";
-    var sodium = Math.round(result.recipe.totalNutrients.NA.quantity / servings) || "NA";
-    var potassium = Math.round(result.recipe.totalNutrients.K.quantity / servings) || "NA";
-    var totalCarbs = Math.round(result.recipe.totalNutrients.CHOCDF.quantity / servings) || "NA";
-    var sugars = Math.round(result.recipe.totalNutrients.SUGAR.quantity / servings) || "NA";
-    var protein = Math.round(result.recipe.totalNutrients.PROCNT.quantity / servings) || "NA";
+    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT);
+    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT);
+    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE);
+    var sodium = generateNutrient(result.recipe.totalNutrients.NA);
+    var potassium = generateNutrient(result.recipe.totalNutrients.K);
+    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF);
+    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR);
+    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT);
     
     var resultsHtml = '';
         resultsHtml += '' +
