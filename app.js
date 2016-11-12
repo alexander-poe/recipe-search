@@ -44,14 +44,14 @@ function generateNutrient(nutrient, servings) {
 function generateNutrition(result) {
     var servings = result.recipe.yield;
     var calories = result.recipe.calories / servings;
-    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT);
-    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT);
-    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE);
-    var sodium = generateNutrient(result.recipe.totalNutrients.NA);
-    var potassium = generateNutrient(result.recipe.totalNutrients.K);
-    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF);
-    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR);
-    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT);
+    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT, servings);
+    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT, servings);
+    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE, servings);
+    var sodium = generateNutrient(result.recipe.totalNutrients.NA, servings);
+    var potassium = generateNutrient(result.recipe.totalNutrients.K, servings);
+    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF, servings);
+    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR, servings);
+    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT, servings);
     
     var resultsHtml = '';
         resultsHtml += '' +
