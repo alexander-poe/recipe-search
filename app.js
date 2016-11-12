@@ -64,15 +64,14 @@ console.log(nutrientsArray);
 				'<tr><th>Nutrition Facts</th></tr>' +
 				'<tr><th>Amount per Serving</th></tr>' +
 				'<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
-				'<tr><td>% Daily Value*</td></tr>' + 
 				'<tr><td>Total Fat... ' + Math.round(nutrientsArray[0]) + '</td></tr>' + 
-				'<tr><td>Saturated Fat...' + Math.round(saturatedFat) + '</td></tr>' + 
-				'<tr><td>Cholesterol...' + Math.round(cholesterol) +'</td></tr>' + 
-				'<tr><td>Sodium...' + Math.round(sodium) + ' </td></tr>' + 
-				'<tr><td>Potassium...' + Math.round(potassium) + '</td></tr>' +
-				'<tr><td>Total Carbohydrate...' + Math.round(totalCarbs) + '</td></tr>' +
-				'<tr><td>Sugars... ' + Math.round(sugars) + '</td></tr>' +
-				'<tr><td>Protein... ' + Math.round(protein) + ' </td></tr>' +
+				'<tr><td>Saturated Fat...' + Math.round(nutrientsArray[1]) + '</td></tr>' + 
+				'<tr><td>Cholesterol...' + Math.round(nutrientsArray[2]) +'</td></tr>' + 
+				'<tr><td>Sodium...' + Math.round(nutrientsArray[3]) + ' </td></tr>' + 
+				'<tr><td>Potassium...' + Math.round(nutrientsArray[4]) + '</td></tr>' +
+				'<tr><td>Total Carbohydrate...' + Math.round(nutrientsArray[5]) + '</td></tr>' +
+				'<tr><td>Sugars... ' + Math.round(nutrientsArray[6]) + '</td></tr>' +
+				'<tr><td>Protein... ' + Math.round(nutrientsArray[7]) + ' </td></tr>' +
 			'</table>' +
 		'</div>';
 	return resultsHtml;
