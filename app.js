@@ -36,17 +36,27 @@ function changeHealthState(healthyDiet) {
 function generateNutrition(result) {
 	var servings = result.recipe.yield;
 	var calories = result.recipe.calories / servings;
-	var totalFat = result.recipe.totalNutrients.FAT.quantity / servings;
-	var saturatedFat = result.recipe.totalNutrients.FASAT.quantity / servings;
-	var cholesterol = result.recipe.totalNutrients.CHOLE.quantity / servings;
-	var sodium = result.recipe.totalNutrients.NA.quantity / servings;
-	var potassium = result.recipe.totalNutrients.K.quantity / servings;
-	var totalCarbs = result.recipe.totalNutrients.CHOCDF.quantity / servings;
-	var sugars = result.recipe.totalNutrients.SUGAR.quantity / servings;
-	var protein = result.recipe.totalNutrients.PROCNT.quantity / servings;
+	var totalFat = result.recipe.totalNutrients.FAT;
+	var saturatedFat = result.recipe.totalNutrients.FASAT;
+	var cholesterol = result.recipe.totalNutrients.CHOLE;
+	var sodium = result.recipe.totalNutrients.NA;
+	var potassium = result.recipe.totalNutrients.K;
+	var totalCarbs = result.recipe.totalNutrients.CHOCDF;
+	var sugars = result.recipe.totalNutrients.SUGAR;
+	var protein = result.recipe.totalNutrients.PROCNT;
 	
+	var nutrientsArray = [totalFat, saturatedFat, cholesterol, sodium, potassium, totalCarbs, sugars, protein]
+	nutrientsArray.forEach(function(nutrient){
+		var size = ""
+		if (nutrient === undefined) {
+			size = 0;
+		} else {
+			size = nutrient.quantity / servings;
+		}
+		return size;
+	})
 
-
+console.log(nutrientsArray);
 	var resultsHtml = '';
 		resultsHtml += '' +
 		'<div class="nutrition-info hidden">' +
@@ -55,7 +65,7 @@ function generateNutrition(result) {
 				'<tr><th>Amount per Serving</th></tr>' +
 				'<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
 				'<tr><td>% Daily Value*</td></tr>' + 
-				'<tr><td>Total Fat... ' + Math.round(totalFat) + '</td></tr>' + 
+				'<tr><td>Total Fat... ' + Math.round(nutrientsArray[0]) + '</td></tr>' + 
 				'<tr><td>Saturated Fat...' + Math.round(saturatedFat) + '</td></tr>' + 
 				'<tr><td>Cholesterol...' + Math.round(cholesterol) +'</td></tr>' + 
 				'<tr><td>Sodium...' + Math.round(sodium) + ' </td></tr>' + 
