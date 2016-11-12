@@ -30,7 +30,7 @@ function changeHealthState(healthyDiet) {
 function generateNutrient(nutrient) {
     var num = ''
     if (nutrient !== undefined) {
-        num = Math.round(result.recipe.totalNutrients.FAT.quantity / servings); 
+        num = Math.round(nutrient.quantity / servings); 
     } else {
         num = "NA"
     }
