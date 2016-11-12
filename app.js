@@ -30,7 +30,7 @@ function changeHealthState(healthyDiet) {
 function generateNutrient(nutrient, servings) {
     var num = ''
     if (nutrient !== undefined) {
-        num = Math.round(nutrient.quantity / servings); 
+        num = Math.round(parseInt(nutrient.quantity) / servings); 
     } else {
         num = "NA"
     }
