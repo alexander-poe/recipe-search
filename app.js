@@ -1,5 +1,5 @@
 $(function() {
-console.log("1");
+
 //!state
 var URL = 'https://api.edamam.com/search?callback=?';
 var state = {
