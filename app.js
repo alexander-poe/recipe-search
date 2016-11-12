@@ -52,6 +52,7 @@ function generateNutrition(result) {
 			size = 0;
 		} else {
 			size = parseInt(nutrient.quantity) / servings;
+			console.log(size);
 		}
 		return size;
 	})
