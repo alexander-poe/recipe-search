@@ -30,10 +30,6 @@ function changeHealthState(healthyDiet) {
 function generateNutrient(nutrient, servings) {
     var num = ''
     if (nutrient !== undefined) {
-        console.log("result:"+nutrient.quantity);
-        console.log(typeof nutrient.quantity);
-        console.log("servings" + servings);
-        console.log(typeof servings);
         num = Math.round(parseInt(nutrient.quantity) / servings); 
     } else {
         num = "NA"
