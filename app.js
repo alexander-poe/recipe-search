@@ -27,7 +27,7 @@ function changeHealthState(healthyDiet) {
 //!rendering
 //nutrition facts
     
-function generateNutrient(nutrient) {
+function generateNutrient(nutrient, servings) {
     var num = ''
     if (nutrient !== undefined) {
         num = Math.round(nutrient.quantity / servings); 
