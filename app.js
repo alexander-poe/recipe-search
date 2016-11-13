@@ -1,5 +1,23 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @alexpoe22
+ Watch 0
+  Star 0
+ Fork 1 TheresaWilkin/recipe-search-1
+forked from alexpoe22/recipe-search
+ Code  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathrecipe-search-1/app.js
+3b7c57e  a day ago
+@TheresaWilkin TheresaWilkin Update app.js
+2 contributors @TheresaWilkin @alexpoe22
+RawBlameHistory     
+137 lines (132 sloc)  4.86 KB
 $(function() {
-console.log("1");
+
 //!state
 var URL = 'https://api.edamam.com/search?callback=?';
 var state = {
@@ -26,17 +44,28 @@ function changeHealthState(healthyDiet) {
 }
 //!rendering
 //nutrition facts
+    
+function generateNutrient(nutrient) {
+    var num = ''
+    if (nutrient !== undefined) {
+        num = Math.round(result.recipe.totalNutrients.FAT.quantity / servings); 
+    } else {
+        num = "NA"
+    }
+    return num;
+}
+    
 function generateNutrition(result) {
     var servings = result.recipe.yield;
     var calories = result.recipe.calories / servings;
-    var totalFat = result.recipe.totalNutrients.FAT.quantity / servings;
-    var saturatedFat = result.recipe.totalNutrients.FASAT.quantity / servings;
-    var cholesterol = result.recipe.totalNutrients.CHOLE.quantity / servings;
-    var sodium = result.recipe.totalNutrients.NA.quantity / servings;
-    var potassium = result.recipe.totalNutrients.K.quantity / servings;
-    var totalCarbs = result.recipe.totalNutrients.CHOCDF.quantity / servings;
-    var sugars = result.recipe.totalNutrients.SUGAR.quantity / servings;
-    var protein = result.recipe.totalNutrients.PROCNT.quantity / servings;
+    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT);
+    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT);
+    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE);
+    var sodium = generateNutrient(result.recipe.totalNutrients.NA);
+    var potassium = generateNutrient(result.recipe.totalNutrients.K);
+    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF);
+    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR);
+    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT);
     
     var resultsHtml = '';
         resultsHtml += '' +
@@ -46,14 +75,14 @@ function generateNutrition(result) {
                 '<tr><th>Amount per Serving</th></tr>' +
                 '<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
                 '<tr><td>% Daily Value*</td></tr>' + 
-                '<tr><td>Total Fat... ' + Math.round(totalFat) + '</td></tr>' + 
-                '<tr><td>Saturated Fat...' + Math.round(saturatedFat) + '</td></tr>' + 
-                '<tr><td>Cholesterol...' + Math.round(cholesterol) +'</td></tr>' + 
-                '<tr><td>Sodium...' + Math.round(sodium) + ' </td></tr>' + 
-                '<tr><td>Potassium...' + Math.round(potassium) + '</td></tr>' +
-                '<tr><td>Total Carbohydrate...' + Math.round(totalCarbs) + '</td></tr>' +
-                '<tr><td>Sugars... ' + Math.round(sugars) + '</td></tr>' +
-                '<tr><td>Protein... ' + Math.round(protein) + ' </td></tr>' +
+                '<tr><td>Total Fat... ' + totalFat + '</td></tr>' + 
+                '<tr><td>Saturated Fat...' + saturatedFat + '</td></tr>' + 
+                '<tr><td>Cholesterol...' + cholesterol +'</td></tr>' + 
+                '<tr><td>Sodium...' + sodium + ' </td></tr>' + 
+                '<tr><td>Potassium...' + potassium + '</td></tr>' +
+                '<tr><td>Total Carbohydrate...' + totalCarbs + '</td></tr>' +
+                '<tr><td>Sugars... ' + sugars + '</td></tr>' +
+                '<tr><td>Protein... ' + protein + ' </td></tr>' +
             '</table>' +
         '</div>';
     return resultsHtml;
