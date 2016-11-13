@@ -22,17 +22,17 @@ dl, h3, table {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #e0ecf7;
     font-family: 'Cormorant Garamond', serif;
 }
 
 button {
-    background-color: blue;
+    background-color: #b6b6bf;
     color: white;
     font-size: 2em;
     border-radius: 5px;
     font-family: 'Cormorant Garamond', serif;
-    border: navy 2px solid;
+   
     margin-left: 45px;
     margin-bottom: 20px;
 }
@@ -45,7 +45,7 @@ input {
     font-size: 2em;
     border-radius: 5px;
     font-family: 'Cormorant Garamond', serif;
-    border: navy 2px solid;
+   
     height: 44px;
 }
 
