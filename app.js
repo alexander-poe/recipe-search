@@ -1,21 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @alexpoe22
- Watch 0
-  Star 0
- Fork 1 TheresaWilkin/recipe-search-1
-forked from alexpoe22/recipe-search
- Code  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathrecipe-search-1/app.js
-3b7c57e  a day ago
-@TheresaWilkin TheresaWilkin Update app.js
-2 contributors @TheresaWilkin @alexpoe22
-RawBlameHistory     
-137 lines (132 sloc)  4.86 KB
+
 $(function() {
 
 //!state
