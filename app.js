@@ -1,5 +1,23 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @alexpoe22
+ Watch 0
+  Star 0
+ Fork 1 TheresaWilkin/recipe-search-1
+forked from alexpoe22/recipe-search
+ Code  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathrecipe-search-1/app.js
+3b7c57e  a day ago
+@TheresaWilkin TheresaWilkin Update app.js
+2 contributors @TheresaWilkin @alexpoe22
+RawBlameHistory     
+137 lines (132 sloc)  4.86 KB
 $(function() {
-console.log("1");
+
 //!state
 var URL = 'https://api.edamam.com/search?callback=?';
 var state = {
@@ -26,17 +44,28 @@ function changeHealthState(healthyDiet) {
 }
 //!rendering
 //nutrition facts
+    
+function generateNutrient(nutrient) {
+    var num = ''
+    if (nutrient !== undefined) {
+        num = Math.round(result.recipe.totalNutrients.FAT.quantity / servings); 
+    } else {
+        num = "NA"
+    }
+    return num;
+}
+    
 function generateNutrition(result) {
     var servings = result.recipe.yield;
     var calories = result.recipe.calories / servings;
-    var totalFat = Math.round(result.recipe.totalNutrients.FAT.quantity / servings) || "NA";
-    var saturatedFat = Math.round(result.recipe.totalNutrients.FASAT.quantity / servings) || "NA";
-    var cholesterol = Math.round(result.recipe.totalNutrients.CHOLE.quantity / servings) || "NA";
-    var sodium = Math.round(result.recipe.totalNutrients.NA.quantity / servings) || "NA";
-    var potassium = Math.round(result.recipe.totalNutrients.K.quantity / servings) || "NA";
-    var totalCarbs = Math.round(result.recipe.totalNutrients.CHOCDF.quantity / servings) || "NA";
-    var sugars = Math.round(result.recipe.totalNutrients.SUGAR.quantity / servings) || "NA";
-    var protein = Math.round(result.recipe.totalNutrients.PROCNT.quantity / servings) || "NA";
+    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT);
+    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT);
+    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE);
+    var sodium = generateNutrient(result.recipe.totalNutrients.NA);
+    var potassium = generateNutrient(result.recipe.totalNutrients.K);
+    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF);
+    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR);
+    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT);
     
     var resultsHtml = '';
         resultsHtml += '' +
@@ -123,3 +152,5 @@ $("#health-diet").submit(function(e) {
     newSearch(state.query);
 })
 });
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
