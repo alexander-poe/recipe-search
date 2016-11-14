@@ -34,7 +34,7 @@ const changeHealthState = healthyDiet => {
 //!rendering
 //nutrition facts
     
-const generateNutrient = (nutrient, servings) => {
+const generateNutrient = (servings, nutrient) => {
     return (nutrient 
         ? Math.round(nutrient.quantity / servings) 
         : "NA");
@@ -46,14 +46,16 @@ const generateNutrition = result => {
     let calories = result.recipe.calories / servings;
     let nutrients = result.recipe.totalNutrients;
 
-    let totalFat = generateNutrient(nutrients.FAT, servings);
-    let saturatedFat = generateNutrient(nutrients.FASAT, servings);
-    let cholesterol = generateNutrient(nutrients.CHOLE, servings);
-    let sodium = generateNutrient(nutrients.NA, servings);
-    let potassium = generateNutrient(nutrients.K, servings);
-    let totalCarbs = generateNutrient(nutrients.CHOCDF, servings);
-    let sugars = generateNutrient(nutrients.SUGAR, servings);
-    let protein = generateNutrient(nutrients.PROCNT, servings);
+    const gen = generateNutrient.bind(null, servings);
+    
+    let totalFat = gen(nutrients.FAT);
+    let saturatedFat = gen(nutrients.FASAT);
+    let cholesterol = gen(nutrients.CHOLE);
+    let sodium = gen(nutrients.NA);
+    let potassium = gen(nutrients.K);
+    let totalCarbs = gen(nutrients.CHOCDF);
+    let sugars = gen(nutrients.SUGAR);
+    let protein = gen(nutrients.PROCNT);
     
     let resultsHtml = 
         `<div class="nutrition-info hidden">` +
