@@ -1,8 +1,8 @@
 $(function() {
 
 //!state
-var URL = 'https://api.edamam.com/search?callback=?';
-var state = {
+const URL = 'https://api.edamam.com/search?callback=?';
+let state = {
     query: '',
     searchObj: {
         q:'',
@@ -11,125 +11,125 @@ var state = {
     }
 }
 //new search    
-function newSearch(query) {
+const newSearch = query => {
     state.searchObj.q = state.query; 
     $.getJSON(URL, state.searchObj, renderData);
 };
 //add or deletes property from search obj vg v gf ect.
-function changeHealthState(healthyDiet) {
-    if (healthyDiet === "none" && state.searchObj.hasOwnProperty("health")) {
-        delete state.searchObj["health"];
-    } else if (healthyDiet !== "none") {
-        state.searchObj["health"] = healthyDiet;
-    };
+const changeHealthState = healthyDiet => {
+    state.searchObj.health = healthyDiet;
+
+    if (healthyDiet === "none") {
+        delete state.searchObj.health;
+    }
+
+    // if (healthyDiet === "none" && state.searchObj.hasOwnProperty("health")) {
+    //     delete state.searchObj["health"];
+    // } else if (healthyDiet !== "none") {
+    //     state.searchObj["health"] = healthyDiet;
+    // };
+
     $("#diet-need").text(healthyDiet);
 }
 //!rendering
 //nutrition facts
     
-function generateNutrient(nutrient) {
-    var num = ''
-    if (nutrient !== undefined) {
-        num = Math.round(result.recipe.totalNutrients.FAT.quantity / servings); 
-    } else {
-        num = "NA"
-    }
-    return num;
+const generateNutrient = (nutrient, servings) => {
+    return (nutrient 
+        ? Math.round(nutrient.quantity / servings) 
+        : "NA");
+    // return num;
 }
     
-function generateNutrition(result) {
-    var servings = result.recipe.yield;
-    var calories = result.recipe.calories / servings;
-    var totalFat = generateNutrient(result.recipe.totalNutrients.FAT);
-    var saturatedFat = generateNutrient(result.recipe.totalNutrients.FASAT);
-    var cholesterol = generateNutrient(result.recipe.totalNutrients.CHOLE);
-    var sodium = generateNutrient(result.recipe.totalNutrients.NA);
-    var potassium = generateNutrient(result.recipe.totalNutrients.K);
-    var totalCarbs = generateNutrient(result.recipe.totalNutrients.CHOCDF);
-    var sugars = generateNutrient(result.recipe.totalNutrients.SUGAR);
-    var protein = generateNutrient(result.recipe.totalNutrients.PROCNT);
+const generateNutrition = result => {
+    let servings = result.recipe.yield;
+    let calories = result.recipe.calories / servings;
+    let nutrients = result.recipe.totalNutrients;
+
+    let totalFat = generateNutrient(nutrients.FAT, servings);
+    let saturatedFat = generateNutrient(nutrients.FASAT, servings);
+    let cholesterol = generateNutrient(nutrients.CHOLE, servings);
+    let sodium = generateNutrient(nutrients.NA, servings);
+    let potassium = generateNutrient(nutrients.K, servings);
+    let totalCarbs = generateNutrient(nutrients.CHOCDF, servings);
+    let sugars = generateNutrient(nutrients.SUGAR, servings);
+    let protein = generateNutrient(nutrients.PROCNT, servings);
     
-    var resultsHtml = '';
-        resultsHtml += '' +
-        '<div class="nutrition-info hidden">' +
-            '<table>' +
-                '<tr><th>Nutrition Facts</th></tr>' +
-                '<tr><th>Amount per Serving</th></tr>' +
-                '<tr><td>Calories.....' + Math.round(calories) + '</td></tr>' +
-                '<tr><td>% Daily Value*</td></tr>' + 
-                '<tr><td>Total Fat... ' + totalFat + '</td></tr>' + 
-                '<tr><td>Saturated Fat...' + saturatedFat + '</td></tr>' + 
-                '<tr><td>Cholesterol...' + cholesterol +'</td></tr>' + 
-                '<tr><td>Sodium...' + sodium + ' </td></tr>' + 
-                '<tr><td>Potassium...' + potassium + '</td></tr>' +
-                '<tr><td>Total Carbohydrate...' + totalCarbs + '</td></tr>' +
-                '<tr><td>Sugars... ' + sugars + '</td></tr>' +
-                '<tr><td>Protein... ' + protein + ' </td></tr>' +
-            '</table>' +
-        '</div>';
+    let resultsHtml = 
+        `<div class="nutrition-info hidden">` +
+            `<table>` +
+                `<tr><th>Nutrition Facts</th></tr>` +
+                `<tr><th>Amount per Serving</th></tr>` +
+                `<tr><td>Calories.....${Math.round(calories)}</td></tr>` + 
+                `<tr><td>Total Fat... ${totalFat}</td></tr>` + 
+                `<tr><td>Saturated Fat...${saturatedFat}</td></tr>` + 
+                `<tr><td>Cholesterol...${cholesterol}</td></tr>` + 
+                `<tr><td>Sodium...${sodium}</td></tr>` + 
+                `<tr><td>Potassium...${potassium}</td></tr>` +
+                `<tr><td>Total Carbohydrate...${totalCarbs}</td></tr>` +
+                `<tr><td>Sugars... ${sugars}</td></tr>` +
+                `<tr><td>Protein... ${protein}</td></tr>` +
+            `</table>` +
+        `</div>`;
     return resultsHtml;
 }
 //ingredients 
-function generateIngredientsList(result) {
-    var resultsHtml = '';
-    result.recipe.ingredientLines.forEach(function(result) {
-        resultsHtml += '<dt>' + result + '</dt>';
-    })
-    return resultsHtml;
+const generateIngredientsList = result => {
+    return result.recipe.ingredientLines.map(result => `<dt>${result}</dt>`).join("");
 }
 //recipe && nutrition buttons
-function generateButtons(result) {
-    var link = result.recipe.url;
-    var resultsHtml = '';
-    resultsHtml += '<div class="btn-group">' + 
-    '<button type="button" id="recipebtn" value="' + link + '" class="btn btn-primary">' + "Recipe" + '</button>' +
-    '<button type="button" id="nutritionbtn" class="btn btn-primary">' + "Nutrition" + '</button>' +
-    '</div>';
-    return resultsHtml;
+const generateButtons = result => {
+    let link = result.recipe.url;
+    
+    return (
+        `<div class="btn-group">` + 
+            `<button type="button" id="recipebtn" value="${link}" class="btn btn-primary">Recipe</button>` +
+            `<button type="button" id="nutritionbtn" class="btn btn-primary">Nutrition</button>` +
+        `</div>`
+    );
 }
 //renders page
-function renderData(data) {
-    var resultsHtml = ''; 
-    data.hits.forEach(function(result) {
-        var img = result.recipe.image;
-        var recipeHtml = '<div class=result><img src="' + img + 
-        '">' + '</br>' + '<div class="list hidden"><h3>' + 
-        result.recipe.label + '</h3>' + '<h4>' + 'serves ' + result.recipe.yield + '</h4><dl>' + 
-        generateIngredientsList(result) + '</dl>' + generateNutrition(result) +
-        generateButtons(result) + '</div></div>';
-        resultsHtml += recipeHtml;
-    })
+const renderData = data => {
+    let resultsHtml = data.hits.map(result => {
+        let img = result.recipe.image;
+        return (`<div class=result><img src="${img}"></br>` +
+        `<div class="list hidden"><h3>${result.recipe.label}</h3>` + 
+        `<h4>serves ${result.recipe.yield}</h4>` +
+        `<dl>${generateIngredientsList(result)}</dl>` + 
+        `${generateNutrition(result)}` +
+        `${generateButtons(result)}</div></div>`);
+    });
     $("#results").html(resultsHtml);
 };
 //!event listeners 
 //submit query 
-$("form").submit(function(e) {
+$("form").submit(e => {
     e.preventDefault();
     state.query = $("#searchRecipes").val();
     newSearch(state.query);
-})
+});
 //toggle ingredient view w/recipe && nutrional info button
-$("#results").on("click", ".result", function(e) {
+$("#results").on("click", ".result", e => {
     e.stopPropagation();
-    $(this).children(".list").toggleClass("hidden").toggleClass("float");
+    $(e.currentTarget).children(".list").toggleClass("hidden").toggleClass("float");
 })
 //recipe button
-$("#results").on("click", "#recipebtn", function(e) {
+$("#results").on("click", "#recipebtn", e => {
     e.stopPropagation();
-    var siteURL = $(this).val();
+    let siteURL = $(e.currentTarget).val();
     window.open(siteURL);
-})
+});
 //nutritional data toggle
-$("#results").on("click", "#nutritionbtn", function(e) {
+$("#results").on("click", "#nutritionbtn", e => {
     e.stopPropagation();
-    $(this).closest(".list").children(".nutrition-info").toggleClass("hidden");
-    $(this).closest(".list").children("dl").toggleClass("hidden");
+    $(e.currentTarget).closest(".list").children(".nutrition-info").toggleClass("hidden");
+    $(e.currentTarget).closest(".list").children("dl").toggleClass("hidden");
 })
 //v, vg, gf ect
-$("#health-diet").submit(function(e) {
+$("#health-diet").submit(e => {
     e.preventDefault();
     e.stopPropagation();
-    var healthyDiet = ($("#health-diet input:checked").val());
+    let healthyDiet = ($("#health-diet input:checked").val());
     changeHealthState(healthyDiet);
     newSearch(state.query);
 })
