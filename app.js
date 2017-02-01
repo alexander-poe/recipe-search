@@ -47,7 +47,7 @@ const generateNutrition = result => {
     let nutrients = result.recipe.totalNutrients;
 
     const gen = generateNutrient.bind(null, servings);
-    
+
     let totalFat = gen(nutrients.FAT);
     let saturatedFat = gen(nutrients.FASAT);
     let cholesterol = gen(nutrients.CHOLE);
@@ -103,6 +103,8 @@ const renderData = data => {
     });
     $("#results").html(resultsHtml);
 };
+
+
 //!event listeners 
 //submit query 
 $("form").submit(e => {
