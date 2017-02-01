@@ -18,7 +18,7 @@ Find recipes using a filter, then see their ingredients and nutritional facts wi
 
 ### Recipe Details
 
-![recipe details](/details.png)
+![recipe details](/detail.png)
 
 ## Tech Stack
 
