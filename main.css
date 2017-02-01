@@ -1,4 +1,9 @@
 
+@media only screen and (min-width: 768px) {
+    #health-container {
+        float: right;
+    }
+}
 
 #results {
     line-height: 0;
@@ -72,15 +77,17 @@ input {
     border-radius: 5px;
     border: #36486b 2px solid;
     height: 44px;
+    padding-left: 10px;
 }
 
 #health-container {
     width: 300px;
     border: 1px solid #36486b;
     border-radius: 5px;
-    float: right;
+    margin: auto;
     padding: 10px;
     font-size: 1.4em;
+    margin-bottom: 10px;
 }
 
 #health-container button {

@@ -14,11 +14,14 @@ Find recipes using a filter, then see their ingredients and nutritional facts wi
 
 ### Search Results
 
-![user list](/search.png)
+![search results](/search.png)
 
+### Recipe Details
+
+![recipe details](/detail.png)
 
 ## Tech Stack
 
 - Server: Edamame API
 
-- Client: HTML, CSS
+- Client: HTML, CSS, jQuery
