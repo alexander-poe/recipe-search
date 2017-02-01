@@ -1,6 +1,18 @@
 
+
 #results {
     line-height: 0;
+    max-width: 900px;
+}
+
+.centered-container {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    max-width: 1400px; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom:10px;
 }
 
 .result {
@@ -17,8 +29,16 @@
     float: left;
 }
 
-dl, h3, table {
+dl, h3, h4, table {
     line-height: 1.5em;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+h4 {
+    font-style: italic;
 }
 
 body {
@@ -26,39 +46,53 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
+p {
+    line-height: 2em;
+}
+
 button {
-    background-color: blue;
+    background-color: #4040a1;
     color: white;
     font-size: 2em;
     border-radius: 5px;
     font-family: 'Cormorant Garamond', serif;
-    border: navy 2px solid;
+    border: #36486b 2px solid;
     margin-left: 45px;
     margin-bottom: 20px;
 }
 
-.btn-group {
-    font-size: 0.5em;
+.btn-group button {
+    font-size: 1em;
 }
 
 input {
     font-size: 2em;
     border-radius: 5px;
-    font-family: 'Cormorant Garamond', serif;
-    border: navy 2px solid;
+    border: #36486b 2px solid;
     height: 44px;
 }
 
 #health-container {
     width: 300px;
-    border: 1px solid navy;
+    border: 1px solid #36486b;
     border-radius: 5px;
     float: right;
+    padding: 10px;
 }
 
 #health-container button {
     margin-top: 20px;
     font-size: 1em;
-    border: 1px solid navy;
+    border: 1px solid #36486b;
+    border-radius: 5px;
+}
+
+header {
+    font-size: 2em;
+    text-align: center;
+    background-color: #36486b;
+    color: aliceblue;
+    padding: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
 }
