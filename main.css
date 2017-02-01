@@ -31,6 +31,7 @@
 
 dl, h3, h4, table {
     line-height: 1.5em;
+    font-size: 1.2em
 }
 
 h3 {
@@ -48,6 +49,7 @@ body {
 
 p {
     line-height: 2em;
+    font-size: 1.6em;
 }
 
 button {
@@ -57,7 +59,7 @@ button {
     border-radius: 5px;
     font-family: 'Cormorant Garamond', serif;
     border: #36486b 2px solid;
-    margin-left: 45px;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
 
@@ -78,6 +80,7 @@ input {
     border-radius: 5px;
     float: right;
     padding: 10px;
+    font-size: 1.4em;
 }
 
 #health-container button {
@@ -88,11 +91,11 @@ input {
 }
 
 header {
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
     background-color: #36486b;
     color: aliceblue;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }

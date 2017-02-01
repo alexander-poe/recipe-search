@@ -134,6 +134,9 @@ $("#results").on("click", "#nutritionbtn", e => {
     e.stopPropagation();
     $(e.currentTarget).closest(".list").children(".nutrition-info").toggleClass("hidden");
     $(e.currentTarget).closest(".list").children("dl").toggleClass("hidden");
+    let currentValue = $(e.currentTarget).text();
+    let newText = currentValue === "Nutrition" ? "Ingredients" : "Nutrition";
+    $(e.currentTarget).text(newText);
 })
 //v, vg, gf ect
 $("#health-diet").submit(e => {
