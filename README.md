@@ -24,4 +24,4 @@ Find recipes using a filter, then see their ingredients and nutritional facts wi
 
 - Server: Edamame API
 
-- Client: HTML, CSS
+- Client: HTML, CSS, jQuery
