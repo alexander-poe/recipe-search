@@ -1,5 +1,3 @@
-$(function() {
-
 //!state
 const URL = 'https://api.edamam.com/search?callback=?';
 let state = {
@@ -10,12 +8,23 @@ let state = {
         app_key: '8e6eaad81cc090bc90cb3479ffff21f6'
     }
 }
+
+//load page with cookies
+const cookieSearch = () => {
+    const searchObj = {
+        q:'cookie',
+        app_id: '6da7e93e',
+        app_key: '8e6eaad81cc090bc90cb3479ffff21f6'
+    };
+    $.getJSON(URL, searchObj, renderData);
+};
+
 //new search    
 const newSearch = query => {
     state.searchObj.q = state.query; 
     $.getJSON(URL, state.searchObj, renderData);
 };
-//add or deletes property from search obj vg v gf ect.
+//add or deletes property from search obj; vegetarian etc.
 const changeHealthState = healthyDiet => {
     state.searchObj.health = healthyDiet;
 
@@ -23,14 +32,9 @@ const changeHealthState = healthyDiet => {
         delete state.searchObj.health;
     }
 
-    // if (healthyDiet === "none" && state.searchObj.hasOwnProperty("health")) {
-    //     delete state.searchObj["health"];
-    // } else if (healthyDiet !== "none") {
-    //     state.searchObj["health"] = healthyDiet;
-    // };
-
     $("#diet-need").text(healthyDiet);
 }
+
 //!rendering
 //nutrition facts
     
@@ -38,7 +42,6 @@ const generateNutrient = (servings, nutrient) => {
     return (nutrient 
         ? Math.round(nutrient.quantity / servings) 
         : "NA");
-    // return num;
 }
     
 const generateNutrition = result => {
@@ -104,6 +107,9 @@ const renderData = data => {
     $("#results").html(resultsHtml);
 };
 
+//on page load
+$(function() {
+    cookieSearch();
 
 //!event listeners 
 //submit query 
