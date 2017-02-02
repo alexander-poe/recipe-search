@@ -37,6 +37,7 @@ const changeHealthState = healthyDiet => {
 
 //!rendering
 //nutrition facts
+
     
 const generateNutrient = (servings, nutrient) => {
     return (nutrient 
@@ -76,6 +77,7 @@ const generateNutrition = result => {
                 `<tr><td>Protein... ${protein}</td></tr>` +
             `</table>` +
         `</div>`;
+
     return resultsHtml;
 }
 //ingredients 
