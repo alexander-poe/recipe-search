@@ -1,64 +1,100 @@
-
-#results {
-    line-height: 0;
+/*page setup*/
+@media only screen and (min-width: 768px) {
+    #health-container {
+        float: right;
+    }
 }
-
-.result {
-    box-sizing: border-box;
-    width: 300px;
-    display: inline-block;
+body {
+    background-color: aliceblue;
+    font-family: 'Cormorant Garamond', serif;
 }
-
-.hidden {
-    display: none;
+.centered-container {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    max-width: 1400px; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom:10px;
 }
-
-.float {
-    float: left;
-}
-
-dl, h3, table {
+/*font and buttons*/
+dl, h3, h4, table {
     line-height: 1.5em;
+    font-size: 1.2em
 }
-
+h3 {
+    font-weight: bold;
+}
+h4 {
+    font-style: italic;
+p {
+    line-height: 2em;
+    font-size: 1.6em;
+}
 body {
     background-color: #eaeaea;
     font-family: 'Cormorant Garamond', serif;
 }
-
 button {
     background-color: #b6b6bf;
     color: white;
     font-size: 2em;
     border-radius: 5px;
     font-family: 'Cormorant Garamond', serif;
-   
-    margin-left: 45px;
+    border: #36486b 2px solid;
+    margin-left: 10px;
     margin-bottom: 20px;
 }
-
-.btn-group {
-    font-size: 0.5em;
+/*header*/
+header {
+    font-size: 3em;
+    text-align: center;
+    background-color: #36486b;
+    color: aliceblue;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
-
+/*search*/
 input {
     font-size: 2em;
     border-radius: 5px;
-    font-family: 'Cormorant Garamond', serif;
-   
+    border: #36486b 2px solid;
     height: 44px;
+    padding-left: 10px;
 }
-
+/*search results*/
+#results {
+    line-height: 0;
+    max-width: 900px;
+}
+.result {
+    box-sizing: border-box;
+    width: 300px;
+    display: inline-block;
+}
+.hidden {
+    display: none;
+}
+.float {
+    float: left;
+}
+.btn-group button {
+    font-size: 1em;
+}
+/*filter*/
 #health-container {
     width: 300px;
-    border: 1px solid navy;
+    border: 1px solid #36486b;
     border-radius: 5px;
-    float: right;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.4em;
+    margin-bottom: 10px;
 }
-
 #health-container button {
     margin-top: 20px;
     font-size: 1em;
-  
+    border: 1px solid #36486b;
     border-radius: 5px;
 }
