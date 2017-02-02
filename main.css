@@ -4,10 +4,12 @@
         float: right;
     }
 }
+
 body {
     background-color: aliceblue;
     font-family: 'Cormorant Garamond', serif;
 }
+
 .centered-container {
     padding-left: 20px; 
     padding-right: 20px; 
@@ -17,26 +19,28 @@ body {
     margin-top: 10px;
     margin-bottom:10px;
 }
+
 /*font and buttons*/
 dl, h3, h4, table {
     line-height: 1.5em;
     font-size: 1.2em
 }
+
 h3 {
     font-weight: bold;
 }
+
 h4 {
     font-style: italic;
+}
+
 p {
     line-height: 2em;
     font-size: 1.6em;
 }
-body {
-    background-color: #eaeaea;
-    font-family: 'Cormorant Garamond', serif;
-}
+
 button {
-    background-color: #b6b6bf;
+    background-color: #4040a1;
     color: white;
     font-size: 2em;
     border-radius: 5px;
@@ -45,6 +49,7 @@ button {
     margin-left: 10px;
     margin-bottom: 20px;
 }
+
 /*header*/
 header {
     font-size: 3em;
@@ -55,6 +60,7 @@ header {
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
 /*search*/
 input {
     font-size: 2em;
@@ -63,25 +69,31 @@ input {
     height: 44px;
     padding-left: 10px;
 }
+
 /*search results*/
 #results {
     line-height: 0;
     max-width: 900px;
 }
+
 .result {
     box-sizing: border-box;
     width: 300px;
     display: inline-block;
 }
+
 .hidden {
     display: none;
 }
+
 .float {
     float: left;
 }
+
 .btn-group button {
     font-size: 1em;
 }
+
 /*filter*/
 #health-container {
     width: 300px;
@@ -92,6 +104,7 @@ input {
     font-size: 1.4em;
     margin-bottom: 10px;
 }
+
 #health-container button {
     margin-top: 20px;
     font-size: 1em;
