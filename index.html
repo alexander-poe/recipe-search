@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-<link rel="stylesheet" type="text/css" href="main.css">
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+	<meta charset="UTF-8" />
+	<title>Recipe Search</title><meta name="description" content="Theresa Wilkin" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="icon" href="./images/favicon.ico">
 </head>
 <body>
-	<header><h1></h1></header>
+	<div class="centered-container">
+		<header>
+			<h1>Recipe Search</h1>
+		</header>
 
-	<div class="container">
-	
-	<div id="health-container">
-        <p>Dietary Need: <span id="diet-need">none</span></p>
-    <form id="health-diet">
-        <input type="radio" name="answer" value="vegan" required> Vegan <br>
-        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
-        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
-        <input type="radio" name="answer" value="gluten-free"> Gluten-free <br>
-        <input type="radio" name="answer" value="none"> None <br>
-        <button>Add a Dietary Need (limit one)</button>
-    </form>
-    </div>
-
-	<form>
-		<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
-		<button class="btn">Submit</button>
-	</form>
-
-	<div id="results"></div>
+		<div class="centered-container">
+			
+			<div id="health-container">
+		        <p>Dietary Need: <span id="diet-need">none</span></p>
+			    <form id="health-diet">
+			        <input type="radio" name="answer" value="vegan" required> Vegan <br>
+			        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
+			        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
+			        <input type="radio" name="answer" value="none"> None <br>
+			        <button>Add a Dietary Need (limit one)</button>
+			    </form>
+		    </div>
+			<form>
+				<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
+				<button class="btn">Submit</button>
+			</form>
+			<p>Search, then click on images to see ingredients and nutrition information.</p>
+			<div id="results">Loading...</div>
+			<p>Made using the Edamam API.</p>
+		</div>	
 	</div>
-
-	<div class="result">
-
-	</div>
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
