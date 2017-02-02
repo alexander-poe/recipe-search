@@ -1,3 +1,4 @@
+
 //!state
 const URL = 'https://api.edamam.com/search?callback=?';
 let state = {
@@ -38,13 +39,12 @@ const changeHealthState = healthyDiet => {
 //!rendering
 //nutrition facts
 
-    
 const generateNutrient = (servings, nutrient) => {
     return (nutrient 
         ? Math.round(nutrient.quantity / servings) 
         : "NA");
 }
-    
+
 const generateNutrition = result => {
     let servings = result.recipe.yield;
     let calories = result.recipe.calories / servings;
@@ -149,3 +149,5 @@ $("#health-diet").submit(e => {
     newSearch(state.query);
 })
 });
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
