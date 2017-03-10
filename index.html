@@ -12,29 +12,28 @@
 <body>
 	<div class="centered-container">
 		<header>
-			<h1>Recipe Search</h1>
+			<img class="headerPhoto" src="./foodHeader.jpg">
 		</header>
 
-		<div class="centered-container">
-			
+		<div class="main-container">
 			<div id="health-container">
-		        <p>Dietary Need: <span id="diet-need">none</span></p>
-			    <form id="health-diet">
-			        <input type="radio" name="answer" value="vegan" required> Vegan <br>
-			        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
-			        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
-			        <input type="radio" name="answer" value="none"> None <br>
-			        <button>Add a Dietary Need (limit one)</button>
-			    </form>
+					<div class="dietaryNeeds">
+				    <form id="health-diet">
+				        <input type="radio" name="answer" value="vegan" required> Vegan <br>
+				        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
+				        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
+				        <input type="radio" name="answer" value="none"> None <br>
+				        <button>Add (limit one)</button>
+				    </form>
+						<form class="searchFood">
+							<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
+							<button class="btn">Submit</button>
+						</form>
+					</div>
 		    </div>
-			<form>
-				<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
-				<button class="btn">Submit</button>
-			</form>
-			<p>Search, then click on images to see ingredients and nutrition information.</p>
 			<div id="results">Loading...</div>
 			<p>Made using the Edamam API.</p>
-		</div>	
+		</div>
 	</div>
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script type="text/javascript" src="app.js"></script>

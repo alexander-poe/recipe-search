@@ -20,9 +20,9 @@ const cookieSearch = () => {
     $.getJSON(URL, searchObj, renderData);
 };
 
-//new search    
+//new search
 const newSearch = query => {
-    state.searchObj.q = state.query; 
+    state.searchObj.q = state.query;
     $.getJSON(URL, state.searchObj, renderData);
 };
 //add or deletes property from search obj; vegetarian etc.
@@ -39,8 +39,8 @@ const changeHealthState = healthyDiet => {
 //!rendering
 //nutrition facts
 const generateNutrient = (servings, nutrient) => {
-    return (nutrient 
-        ? Math.round(nutrient.quantity / servings) 
+    return (nutrient
+        ? Math.round(nutrient.quantity / servings)
         : "NA");
 }
 const generateNutrition = result => {
@@ -58,17 +58,17 @@ const generateNutrition = result => {
     let totalCarbs = gen(nutrients.CHOCDF);
     let sugars = gen(nutrients.SUGAR);
     let protein = gen(nutrients.PROCNT);
-    
-    let resultsHtml = 
+
+    let resultsHtml =
         `<div class="nutrition-info hidden">` +
             `<table>` +
                 `<tr><th>Nutrition Facts</th></tr>` +
                 `<tr><th>Amount per Serving</th></tr>` +
-                `<tr><td>Calories.....${Math.round(calories)}</td></tr>` + 
-                `<tr><td>Total Fat... ${totalFat}</td></tr>` + 
-                `<tr><td>Saturated Fat...${saturatedFat}</td></tr>` + 
-                `<tr><td>Cholesterol...${cholesterol}</td></tr>` + 
-                `<tr><td>Sodium...${sodium}</td></tr>` + 
+                `<tr><td>Calories.....${Math.round(calories)}</td></tr>` +
+                `<tr><td>Total Fat... ${totalFat}</td></tr>` +
+                `<tr><td>Saturated Fat...${saturatedFat}</td></tr>` +
+                `<tr><td>Cholesterol...${cholesterol}</td></tr>` +
+                `<tr><td>Sodium...${sodium}</td></tr>` +
                 `<tr><td>Potassium...${potassium}</td></tr>` +
                 `<tr><td>Total Carbohydrate...${totalCarbs}</td></tr>` +
                 `<tr><td>Sugars... ${sugars}</td></tr>` +
@@ -78,16 +78,16 @@ const generateNutrition = result => {
 
     return resultsHtml;
 }
-//ingredients 
+//ingredients
 const generateIngredientsList = result => {
     return result.recipe.ingredientLines.map(result => `<dt>${result}</dt>`).join("");
 }
 //recipe && nutrition buttons
 const generateButtons = result => {
     let link = result.recipe.url;
-    
+
     return (
-        `<div class="btn-group">` + 
+        `<div class="btn-group">` +
             `<button type="button" id="recipebtn" value="${link}" class="btn btn-primary">Recipe</button>` +
             `<button type="button" id="nutritionbtn" class="btn btn-primary">Nutrition</button>` +
         `</div>`
@@ -97,10 +97,10 @@ const generateButtons = result => {
 const renderData = data => {
     let resultsHtml = data.hits.map(result => {
         let img = result.recipe.image;
-        return (`<div class=result><img src="${img}"></br>` +
-        `<div class="list hidden"><h3>${result.recipe.label}</h3>` + 
+        return (`<div class=result><img class="resultImage"src="${img}"></br>` +
+        `<div class="list hidden"><h3>${result.recipe.label}</h3>` +
         `<h4>serves ${result.recipe.yield}</h4>` +
-        `<dl>${generateIngredientsList(result)}</dl>` + 
+        `<dl>${generateIngredientsList(result)}</dl>` +
         `${generateNutrition(result)}` +
         `${generateButtons(result)}</div></div>`);
     });
@@ -111,8 +111,8 @@ const renderData = data => {
 $(function() {
     cookieSearch();
 
-//!event listeners 
-//submit query 
+//!event listeners
+//submit query
 $("form").submit(e => {
     e.preventDefault();
     state.query = $("#searchRecipes").val();
