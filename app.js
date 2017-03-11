@@ -106,12 +106,17 @@ const renderData = data => {
     });
     $("#results").html(resultsHtml);
 };
-
 //on page load
 $(function() {
     cookieSearch();
 
 //!event listeners
+//footerBtn
+$(".footerBtn").on('click', e => {
+  e.preventDefault();
+  $('body').animatescroll();
+});
+
 //submit query
 $("form").submit(e => {
     e.preventDefault();
@@ -126,6 +131,7 @@ $("#results").on("click", ".result", e => {
 //recipe button
 $("#results").on("click", "#recipebtn", e => {
     e.stopPropagation();
+
     let siteURL = $(e.currentTarget).val();
     window.open(siteURL);
 });
