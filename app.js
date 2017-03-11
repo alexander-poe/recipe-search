@@ -114,17 +114,24 @@ $(function() {
 //footerBtn
 $(".footerBtn").on('click', e => {
   e.preventDefault();
-  $('body').animatescroll();
+  $('#results').animatescroll({scrollSpeed:3000,easing:'easeInOutBack'});
 });
+
+//logoText
+$(".logoText").on('click', e => {
+  e.preventDefault();
+  $('.dietaryNeedsH2').animatescroll({scrollSpeed:2000,easing:'easeInOutBack'});
+})
 
 //submit query
 $("form").submit(e => {
     e.preventDefault();
     state.query = $("#searchRecipes").val();
     newSearch(state.query);
+    $('#results').animatescroll({scrollSpeed:2000,easing:'easeInOutBack'});
 });
 //toggle ingredient view w/recipe && nutrional info button
-$("#results").on("click", ".result", e => {
+$("header").on("click", ".result", e => {
     e.stopPropagation();
     $(e.currentTarget).children(".list").toggleClass("hidden").toggleClass("float");
 })

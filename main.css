@@ -3,11 +3,21 @@ header {
   width: 100%;
 }
 
+.logoText {
+  padding-top: 143px;
+  position: absolute;
+  z-index: 600;
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .footer {
   display: flex;
   position: relative;
   justify-content: center;
-  height: 500px;
+  height: 900px;
   width: 100%;
   background: #79DCD7;
 }
@@ -15,11 +25,19 @@ header {
 .footerBottom {
   position: absolute;
   bottom: 29px;
+  padding-bottom: 100px;
+}
+
+.mid-section {
+  background: pink;
+  height: 50px;
+  padding-top: 432px;
 }
 
 .headerPhoto {
   width: 100%;
   height: auto;
+  filter: grayscale(62%);
   position: relative;
 }
 
@@ -40,7 +58,6 @@ header {
 #health-container {
   position: relative;
   height: 196px;
-  background-color: pink;
 }
 
 .dietaryNeeds {
@@ -63,11 +80,17 @@ form#health-diet {
 }
 
 .main-container {
+  padding-top: 20%;
+}
 
+.resultImage {
+  height: 200px;
 }
 
 #results {
   display: flex;
+  padding-top: 50px;
+  background: grey;
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;

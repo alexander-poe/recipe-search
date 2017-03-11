@@ -12,28 +12,33 @@
 <body>
 	<div class="centered-container">
 		<header>
+			<div class="logoText">
+				<p>Hey</p>
+			</div>
 			<img class="headerPhoto" src="./foodHeader.jpg">
 		</header>
 
 		<div class="main-container">
-			<div id="health-container">
+			<div id="results">Loading...</div>
+			<div class="mid-section">
+				<h2 class="dietaryNeedsH2"> do you have any dietary restrictions? </h2>
+				<h4> y / n </h4>
+			</div>
+			<div class="footer">
+				<div class="footerBottom">
 					<div class="dietaryNeeds">
-				    <form id="health-diet">
-				        <input type="radio" name="answer" value="vegan" required> Vegan <br>
-				        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
-				        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
-				        <input type="radio" name="answer" value="none"> None <br>
-				        <button>Add (limit one)</button>
-				    </form>
+						<form id="health-diet">
+								<input type="radio" name="answer" value="vegan" required> Vegan <br>
+								<input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
+								<input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
+								<input type="radio" name="answer" value="none"> None <br>
+								<button>Add (limit one)</button>
+						</form>
 						<form class="searchFood">
 							<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
 							<button class="btn">Submit</button>
 						</form>
 					</div>
-		    </div>
-			<div id="results">Loading...</div>
-			<div class="footer">
-				<div class="footerBottom">
 					<button class="footerBtn" type="submit">Here</button>
 				</div>
 			</div>
