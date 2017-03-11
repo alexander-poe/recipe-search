@@ -1,3 +1,13 @@
+##TODO
+
+site flow
+click on get started
+animated scroll to dietary needs question
+if yes, dietary needs options show
+if no, animated scroll to search bar
+on enter animated scroll to the top
+
+
 #Recipe Search
 
 Link: https://alexpoe22.github.io/recipe-search/

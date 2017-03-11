@@ -4,10 +4,10 @@ header {
 }
 
 .logoText {
-  padding-top: 143px;
   position: absolute;
   z-index: 600;
   color: white;
+  font-size: 34px;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -89,11 +89,12 @@ form#health-diet {
 
 #results {
   display: flex;
-  padding-top: 50px;
+  padding-top: 79px;
+  height: 500px;
   background: grey;
   overflow-x: scroll;
   overflow-y: hidden;
-  position: relative;
+  position: fixed;
 }
 
 .hidden {
