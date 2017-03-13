@@ -111,6 +111,12 @@ $(function() {
     cookieSearch();
 
 //!event listeners
+//dietaryYes
+$(".dietaryYes").on('click', e => {
+  e.preventDefault();
+  $(".dietaryNeeds").removeClass('hidden');
+})
+
 //footerBtn
 $(".footerBtn").on('click', e => {
   e.preventDefault();

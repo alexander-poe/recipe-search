@@ -62,6 +62,8 @@ header {
 
 .dietaryNeeds {
   padding-top: 50px;
+  position: absolute;
+  z-index: 400;
 }
 
 #health-diet {

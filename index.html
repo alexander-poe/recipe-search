@@ -22,23 +22,23 @@
 			</div>
 			<div class="mid-section">
 				<h2 class="dietaryNeedsH2"> do you have any dietary restrictions? </h2>
-				<h4> y / n </h4>
+				<span class="dietaryYes">Yes</span> / <span class="dietaryNo"> No </span>
+				<div class="dietaryNeeds hidden">
+					<form id="health-diet">
+							<input type="radio" name="answer" value="vegan" required> Vegan <br>
+							<input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
+							<input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
+							<input type="radio" name="answer" value="none"> None <br>
+							<button>Add (limit one)</button>
+					</form>
+				</div>
 			</div>
 			<div class="footer">
 				<div class="footerBottom">
-					<div class="dietaryNeeds">
-						<form id="health-diet">
-								<input type="radio" name="answer" value="vegan" required> Vegan <br>
-								<input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
-								<input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
-								<input type="radio" name="answer" value="none"> None <br>
-								<button>Add (limit one)</button>
-						</form>
-						<form class="searchFood">
-							<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
-							<button class="btn">Submit</button>
-						</form>
-					</div>
+					<form class="searchFood">
+						<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
+						<button class="btn">Submit</button>
+					</form>
 					<button class="footerBtn" type="submit">Here</button>
 				</div>
 			</div>
