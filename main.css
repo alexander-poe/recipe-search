@@ -4,13 +4,17 @@ header {
 }
 
 .logoText {
+  padding-top: 28px;
   position: absolute;
   z-index: 600;
-  color: white;
-  font-size: 34px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
+}
+
+.logoText button {
+  color: pink;
 }
 
 .footer {
@@ -30,7 +34,7 @@ header {
 
 .mid-section {
   background: pink;
-  height: 50px;
+  height: 63px;
   padding-top: 432px;
 }
 
@@ -38,7 +42,12 @@ header {
   width: 100%;
   height: auto;
   filter: grayscale(62%);
+  position: absolute;
+}
+
+.greatMealsLogo {
   position: relative;
+  height: 68px;
 }
 
 .logo {
@@ -64,6 +73,10 @@ header {
   padding-top: 50px;
   position: absolute;
   z-index: 400;
+}
+
+.dietaryYesOrNo {
+  padding-top: 23px;
 }
 
 #health-diet {
@@ -96,7 +109,7 @@ form#health-diet {
   background: grey;
   overflow-x: scroll;
   overflow-y: hidden;
-  position: fixed;
+  position: relative;
 }
 
 .hidden {

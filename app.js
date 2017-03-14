@@ -117,20 +117,21 @@ $(".dietaryYes").on('click', e => {
   $(".dietaryNeeds").removeClass('hidden');
 })
 
-//footerBtn
-$(".footerBtn").on('click', e => {
+//dietaryNo
+$(".dietaryNo").on('click', e => {
   e.preventDefault();
-  $('#results').animatescroll({scrollSpeed:3000,easing:'easeInOutBack'});
-});
+  $(".dietaryYesOrNo").addClass('hidden');
+  $(".searchParent").removeClass('hidden');
+})
 
 //logoText
 $(".logoText").on('click', e => {
   e.preventDefault();
-  $('.dietaryNeedsH2').animatescroll({scrollSpeed:2000,easing:'easeInOutBack'});
+  $('.dietaryYesOrNo').animatescroll({scrollSpeed:2000,easing:'easeInOutBack'});
 })
 
 //submit query
-$("form").submit(e => {
+$(".searchFood").submit(e => {
     e.preventDefault();
     state.query = $("#searchRecipes").val();
     newSearch(state.query);
@@ -144,7 +145,6 @@ $("header").on("click", ".result", e => {
 //recipe button
 $("#results").on("click", "#recipebtn", e => {
     e.stopPropagation();
-
     let siteURL = $(e.currentTarget).val();
     window.open(siteURL);
 });
@@ -161,6 +161,7 @@ $("#results").on("click", "#nutritionbtn", e => {
 $("#health-diet").submit(e => {
     e.preventDefault();
     e.stopPropagation();
+    $(".searchParent").removeClass("hidden");
     let healthyDiet = ($("#health-diet input:checked").val());
     changeHealthState(healthyDiet);
     newSearch(state.query);
