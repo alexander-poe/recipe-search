@@ -1,6 +1,6 @@
 #Recipe Search
 
-Link: https://theresawilkin.github.io/recipe-search-1/
+Link: https://alexpoe22.github.io/recipe-search/
 
 ## Description
 
