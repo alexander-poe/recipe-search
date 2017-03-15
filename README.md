@@ -10,15 +10,15 @@ Find recipes using a filter, then see their ingredients and nutritional facts wi
 
 ### Main Page
 
-![main page](/images/main.png)
+![main page](/images/mainPage.png)
 
 ### Search Results
 
-![search results](/images/search.png)
+![search results](/images/results.png)
 
 ### Recipe Details
 
-![recipe details](/images/detail.png)
+![recipe details](/images/details.png)
 
 ## Tech Stack
 
