@@ -8,6 +8,7 @@
 
 h1, dl, h3, h4, table, button, label, h2, a {
     line-height: 1.8em;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .centered-container {
@@ -25,24 +26,33 @@ h1 {
   font-weight: 400;
   text-align: center;
   padding: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
   font-weight: 400;
   font-size: 26px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h3, label, th, input, select, .health-container button {
   font-size: 22px;
   font-weight: 300;
   text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+tr, dl, dt {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
+  font-family: 'Open Sans', sans-serif;
   font-style: italic;
 }
 
 p {
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   line-height: 2;
 }
@@ -62,6 +72,7 @@ p {
   margin-left: 20px;
   padding: 5px;
   background-color: white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 button:hover, select:hover, .cover-photo:hover {
@@ -143,4 +154,10 @@ a {
 
 .float {
     float: left;
+}
+
+@media only screen and (max-width: 500px) {
+    .health-container {
+      width: 100%;
+    }
 }
