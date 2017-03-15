@@ -1,79 +1,113 @@
-/*page setup*/
-@media only screen and (min-width: 768px) {
-    #health-container {
-        float: right;
-    }
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 0;
 }
 
-body {
-    background-color: aliceblue;
-    font-family: 'Cormorant Garamond', serif;
+h1, dl, h3, h4, table, button, label, h2, a {
+    line-height: 1.8em;
 }
 
 .centered-container {
-    padding-left: 20px; 
-    padding-right: 20px; 
-    max-width: 1400px; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom:10px;
+  width: 90%;
+  margin: auto;
 }
 
-/*font and buttons*/
-dl, h3, h4, table {
-    line-height: 1.5em;
-    font-size: 1.2em
+html, body {
+  margin: 0;
+  height: 100%;
 }
 
-h3 {
-    font-weight: bold;
+h1 {
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 26px;
+}
+
+h3, label, th, input, select, .health-container button {
+  font-size: 22px;
+  font-weight: 300;
+  text-align: left;
 }
 
 h4 {
-    font-style: italic;
+  font-style: italic;
 }
 
 p {
-    line-height: 2em;
-    font-size: 1.6em;
+  font-size: 20px;
+  line-height: 2;
 }
 
-button {
-    background-color: #4040a1;
-    color: white;
-    font-size: 2em;
-    border-radius: 5px;
-    font-family: 'Cormorant Garamond', serif;
-    border: #36486b 2px solid;
-    margin-left: 10px;
-    margin-bottom: 20px;
+.health-container {
+  padding: 10px;
+  width: 90%;
+  max-width: 660px;
+  margin: 20px auto;
+  border: 1px solid black;
+  font-family: 'Open Sans', sans-serif
 }
 
-/*header*/
-header {
-    font-size: 3em;
-    text-align: center;
-    background-color: #36486b;
-    color: aliceblue;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+.health-container button {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 20px;
+  padding: 5px;
+  background-color: white;
 }
 
-/*search*/
+button:hover, select:hover, .cover-photo:hover {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+
+.form-container {
+  display: inline-block;
+  height: 100px;
+  vertical-align: middle;
+  padding: 10px;
+}
+
 input {
-    font-size: 2em;
-    border-radius: 5px;
-    border: #36486b 2px solid;
-    height: 44px;
-    padding-left: 10px;
+  padding-left: 20px;
+  border: none;
 }
 
-/*search results*/
+select {
+  margin-left: 20px;
+  background-color: white;
+  border: none;
+  color: grey;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.footer, .push {
+  height: 50px;
+}
+
 #results {
     line-height: 0;
     max-width: 900px;
+    margin: 20px auto;
+}
+
+.name {
+  height: 100px;
 }
 
 .result {
@@ -82,32 +116,31 @@ input {
     display: inline-block;
 }
 
+.result h3 {
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);;
+}
+
+a {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.result button, a {
+  margin: 10px;
+}
+
+.cover-photo {
+  height: 300px;
+}
+
 .hidden {
     display: none;
 }
 
 .float {
     float: left;
-}
-
-.btn-group button {
-    font-size: 1em;
-}
-
-/*filter*/
-#health-container {
-    width: 300px;
-    border: 1px solid #36486b;
-    border-radius: 5px;
-    margin: auto;
-    padding: 10px;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-#health-container button {
-    margin-top: 20px;
-    font-size: 1em;
-    border: 1px solid #36486b;
-    border-radius: 5px;
 }
