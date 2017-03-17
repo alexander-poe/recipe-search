@@ -6,6 +6,10 @@
   line-height: 0;
 }
 
+body, select, a, input {
+  background-color: rgb(250,250,250);
+}
+
 h1, dl, h3, h4, table, button, label, h2, a {
     line-height: 1.8em;
     font-family: 'Open Sans', sans-serif;
@@ -21,23 +25,38 @@ html, body {
   height: 100%;
 }
 
+header, footer {
+  background-color: #ee6e73;
+  width: 100%;
+  color: white;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 400;
   text-align: center;
   padding: 10px;
   font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 
 h2 {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 26px;
   font-family: 'Open Sans', sans-serif;
+  color: #ee6e73;
 }
 
 h3, label, th, input, select, .health-container button {
   font-size: 22px;
   font-weight: 300;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+th {
+  font-size: 20px;
+  font-weight: 400;
   text-align: left;
   font-family: 'Open Sans', sans-serif;
 }
@@ -62,7 +81,7 @@ p {
   width: 90%;
   max-width: 660px;
   margin: 20px auto;
-  border: 1px solid black;
+  border: 2px outset rgb(192, 192, 192);
   font-family: 'Open Sans', sans-serif
 }
 
@@ -71,8 +90,14 @@ p {
   margin-bottom: 18px;
   margin-left: 20px;
   padding: 5px;
-  background-color: white;
+  background-color: #EF9A9A;
+  border: 2px outset #ef8a8a;
   font-family: 'Open Sans', sans-serif;
+}
+
+.health-container button:active, .result button:active {
+  background-color: rgb(189,189,189);
+  border: none;
 }
 
 button:hover, select:hover, .cover-photo:hover {
@@ -97,7 +122,7 @@ input {
 
 select {
   margin-left: 20px;
-  background-color: white;
+  background-color: rgb(250,250,250);
   border: none;
   color: grey;
 }
@@ -115,6 +140,7 @@ select {
     line-height: 0;
     max-width: 900px;
     margin: 20px auto;
+    margin-top: 50px;
 }
 
 .name {
@@ -129,7 +155,7 @@ select {
 
 .result h3 {
   padding: 10px;
-  color: white;
+  color: rgb(250,250,250);
   background-color: rgba(0, 0, 0, 0.4);;
 }
 
@@ -138,10 +164,14 @@ a {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 300;
+  margin: 10px;
+  background-color: rgb(250,250,250);
 }
 
-.result button, a {
+.result button {
   margin: 10px;
+  background-color: #EF9A9A;
+  border: 2px outset #ef8a8a;
 }
 
 .cover-photo {
@@ -154,6 +184,16 @@ a {
 
 .float {
     float: left;
+}
+
+.footer p {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.list, .nutrition-facts {
+    width: 300px;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 500px) {
