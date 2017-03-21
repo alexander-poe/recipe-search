@@ -1,79 +1,150 @@
-/*page setup*/
-@media only screen and (min-width: 768px) {
-    #health-container {
-        float: right;
-    }
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 0;
 }
 
-body {
-    background-color: aliceblue;
-    font-family: 'Cormorant Garamond', serif;
+body, select, a, input {
+  background-color: rgb(250,250,250);
+}
+
+h1, dl, h3, h4, table, button, label, h2, a {
+    line-height: 1.8em;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .centered-container {
-    padding-left: 20px; 
-    padding-right: 20px; 
-    max-width: 1400px; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom:10px;
+  width: 90%;
+  margin: auto;
 }
 
-/*font and buttons*/
-dl, h3, h4, table {
-    line-height: 1.5em;
-    font-size: 1.2em
+html, body {
+  margin: 0;
+  height: 100%;
 }
 
-h3 {
-    font-weight: bold;
+header, footer {
+  background-color: #ee6e73;
+  width: 100%;
+  color: white;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 26px;
+  font-family: 'Open Sans', sans-serif;
+  color: #ee6e73;
+}
+
+h3, label, th, input, select, .health-container button {
+  font-size: 22px;
+  font-weight: 300;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+th {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+tr, dl, dt {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
-    font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
 }
 
 p {
-    line-height: 2em;
-    font-size: 1.6em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  line-height: 2;
 }
 
-button {
-    background-color: #4040a1;
-    color: white;
-    font-size: 2em;
-    border-radius: 5px;
-    font-family: 'Cormorant Garamond', serif;
-    border: #36486b 2px solid;
-    margin-left: 10px;
-    margin-bottom: 20px;
+.health-container {
+  padding: 10px;
+  width: 90%;
+  max-width: 660px;
+  margin: 20px auto;
+  border: 2px outset rgb(192, 192, 192);
+  font-family: 'Open Sans', sans-serif
 }
 
-/*header*/
-header {
-    font-size: 3em;
-    text-align: center;
-    background-color: #36486b;
-    color: aliceblue;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+.health-container button {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 20px;
+  padding: 5px;
+  background-color: #EF9A9A;
+  border: 2px outset #ef8a8a;
+  font-family: 'Open Sans', sans-serif;
 }
 
-/*search*/
+.health-container button:active, .result button:active {
+  background-color: rgb(189,189,189);
+  border: none;
+}
+
+button:hover, select:hover, .cover-photo:hover {
+  cursor: pointer;
+}
+
+label {
+  display: block;
+}
+
+.form-container {
+  display: inline-block;
+  height: 100px;
+  vertical-align: middle;
+  padding: 10px;
+}
+
 input {
-    font-size: 2em;
-    border-radius: 5px;
-    border: #36486b 2px solid;
-    height: 44px;
-    padding-left: 10px;
+  padding-left: 20px;
+  border: none;
 }
 
-/*search results*/
+select {
+  margin-left: 20px;
+  background-color: rgb(250,250,250);
+  border: none;
+  color: grey;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.footer, .push {
+  height: 50px;
+}
+
 #results {
     line-height: 0;
     max-width: 900px;
+    margin: 20px auto;
+    margin-top: 50px;
+}
+
+.name {
+  height: 100px;
 }
 
 .result {
@@ -82,32 +153,47 @@ input {
     display: inline-block;
 }
 
+.result h3 {
+  padding: 10px;
+  color: rgb(250,250,250);
+  background-color: rgba(0, 0, 0, 0.4);;
+}
+
+a {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 10px;
+  background-color: rgb(250,250,250);
+}
+
+.result button {
+  margin: 10px;
+  background-color: #EF9A9A;
+  border: 2px outset #ef8a8a;
+}
+
+.cover-photo {
+  height: 300px;
+}
+
 .hidden {
     display: none;
 }
 
-.float {
+.footer p {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.list, .nutrition-facts {
+    padding: 10px;
     float: left;
 }
 
-.btn-group button {
-    font-size: 1em;
-}
-
-/*filter*/
-#health-container {
-    width: 300px;
-    border: 1px solid #36486b;
-    border-radius: 5px;
-    margin: auto;
-    padding: 10px;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-#health-container button {
-    margin-top: 20px;
-    font-size: 1em;
-    border: 1px solid #36486b;
-    border-radius: 5px;
+@media only screen and (max-width: 500px) {
+    .health-container {
+      width: 100%;
+    }
 }

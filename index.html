@@ -4,38 +4,43 @@
 	<meta charset="UTF-8" />
 	<title>Recipe Search</title><meta name="description" content="Theresa Wilkin" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i" rel="stylesheet">
 	<link rel="stylesheet" href="./reset.css">
 	<link rel="stylesheet" href="./main.css">
 	<link rel="icon" href="./images/favicon.ico">
 </head>
 <body>
-	<div class="centered-container">
+	<div class="wrapper">
 		<header>
 			<h1>Recipe Search</h1>
 		</header>
-
-		<div class="centered-container">
-			
-			<div id="health-container">
-		        <p>Dietary Need: <span id="diet-need">none</span></p>
-			    <form id="health-diet">
-			        <input type="radio" name="answer" value="vegan" required> Vegan <br>
-			        <input type="radio" name="answer" value="vegetarian"> Vegetarian <br>
-			        <input type="radio" name="answer" value="peanut-free"> Peanut-Free <br>
-			        <input type="radio" name="answer" value="none"> None <br>
-			        <button>Add a Dietary Need (limit one)</button>
-			    </form>
+	<div class="centered-container">
+			<div class="health-container">
+				<form id="health-diet">
+					<div class="form-container">
+						<label for="search">Search</label>
+						<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
+					</div>
+					<div class="form-container">
+						<label for="health">Dietary Need</label>
+						<select id="health">
+							<option value="vegan">Vegan</option>
+							<option value="vegetarian">Vegetarian</option>
+						  <option value="peanut-free">Peanut-Free</option>
+						  <option value="none" selected>None</option>
+						</select>
+					</div>
+					<div class="form-container">
+						<button class="btn">Submit</button>
+					</div>
+			   </form>
 		    </div>
-			<form>
-				<input type="text" name="search" id="searchRecipes" placeholder="Search for a recipe."/>
-				<button class="btn">Submit</button>
-			</form>
-			<p>Search, then click on images to see ingredients and nutrition information.</p>
-			<div id="results">Loading...</div>
-			<p>Made using the Edamam API.</p>
-		</div>	
+			<div id="results"><p>Search, then click on images to see ingredients and nutrition information.</p></div>
+		</div>
+		<div class="push"></div>
 	</div>
+		<footer class="footer"><p>Made using the Edamam API.</p></footer>
+</div>
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
