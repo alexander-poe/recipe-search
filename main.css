@@ -182,18 +182,14 @@ a {
     display: none;
 }
 
-.float {
-    float: left;
-}
-
 .footer p {
   text-align: center;
   padding-top: 5px;
 }
 
 .list, .nutrition-facts {
-    width: 300px;
     padding: 10px;
+    float: left;
 }
 
 @media only screen and (max-width: 500px) {

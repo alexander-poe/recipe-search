@@ -122,7 +122,7 @@ $("form").submit(e => {
 //toggle ingredient view w/recipe && nutrional info button
 $("#results").on("click", ".result", e => {
     e.stopPropagation();
-    $(e.currentTarget).children(".list").toggleClass("hidden").toggleClass("float");
+    $(e.currentTarget).children(".list").slideToggle();
 })
 //recipe button
 $("#results").on("click", "#recipebtn", e => {
@@ -133,8 +133,8 @@ $("#results").on("click", "#recipebtn", e => {
 //nutritional data toggle
 $("#results").on("click", "#nutritionbtn", e => {
     e.stopPropagation();
-    $(e.currentTarget).closest(".list").children(".nutrition-info").toggleClass("hidden");
-    $(e.currentTarget).closest(".list").children("dl").toggleClass("hidden");
+    $(e.currentTarget).closest(".list").children(".nutrition-info").slideToggle();
+    $(e.currentTarget).closest(".list").children("dl").slideToggle();
     let currentValue = $(e.currentTarget).text();
     let newText = currentValue === "Nutrition" ? "Ingredients" : "Nutrition";
     $(e.currentTarget).text(newText);
